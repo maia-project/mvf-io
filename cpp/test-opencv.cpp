@@ -12,7 +12,7 @@ int main (int argc, char * argv[])
 
 	// getting frame from given video
 	video = new MVF (argv[1]);
-	std::vector<unsigned short> f(video->frameSize);
+	std::vector<unsigned short> f;
 	video->getFrame (1, f);
 
 	// std::vector into cv::Mat

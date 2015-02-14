@@ -10,7 +10,7 @@ int main (int argc, char * argv[])
 
 	std::cout << a->header.width << std::endl;
 
-	std::vector<unsigned short> f(a->frameSize);
+	std::vector<unsigned short> f;
 
 	a->getFrame (1, f);
 }

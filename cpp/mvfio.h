@@ -1,3 +1,6 @@
+#ifndef _MVFIO_H_
+#define _MVFIO_H_
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -19,7 +22,7 @@ class MVF
 {
 public:
 	MVF (const char * filename);
-	MVF (const char * filename, unsigned short width, unsigned short height, unsigned short bppUsed, unsigned short channels, float fps, unsigned int numOfFrames);
+	MVF (const char * filename, unsigned short width, unsigned short height, unsigned short bppUsed, unsigned short channels, float fps);
 	~MVF ();
 
 	FILE_HEADER_MVF header;
@@ -39,3 +42,5 @@ private:
 	void validateIndex (unsigned int index);
 	std::fstream inputFile;
 };
+
+#endif
