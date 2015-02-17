@@ -134,17 +134,17 @@ bool MVF::getFrame (unsigned int index, unsigned short * frame)
 	return true;
 }
 
-bool MVF::getFrame (unsigned int index, std::vector<unsigned short> & frame)
+bool MVF::getFrame (unsigned int index, std::vector<unsigned short> & frame, int num = 1)
 {
 	validateIndex (index);
 
-	frame.resize (frameSize);
+	frame.resize (num * frameSize);
 
 	inputFile.seekg (sizeof(header) + (index - 1) * frameSize, std::ios_base::beg);
 
 	try
 	{
-		inputFile.read ((char *) &frame[0], frameSize);
+		inputFile.read ((char *) &frame[0], num * frameSize);
 	}
 	catch (std::ifstream::failure e) 
 	{

@@ -32,7 +32,7 @@ public:
 	int frameHeight;
 
 	bool getFrame (unsigned int index, unsigned short * frame);
-	bool getFrame (unsigned int index, std::vector<unsigned short> & frame);
+	bool getFrame (unsigned int index, std::vector<unsigned short> & frame, int num = 1);
 	bool add (std::vector<short unsigned int> & frame);
 private:
 	const char * filename;
